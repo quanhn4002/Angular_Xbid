@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "id": "6a3b",
+      "name": "Sản phẩm abc",
+      "image": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+      "price": 10000
+    }
+  ]
+}
