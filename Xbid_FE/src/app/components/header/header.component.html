@@ -9,35 +9,89 @@
             alt="Logo"
           />
         </div>
-        <div
-          class="mt-auto flex justify-between mt-auto hidden w-[850px] md:flex mt-auto"
-        >
-          <a
-            href="#"
-            class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
-            >Tài sản đấu giá
-          </a>
-          <a
-            href="#"
-            class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
-            >Cuộc đấu giá</a
-          >
-          <a
-            href="#"
-            class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
-            >Tin tức</a
-          >
-          <a
-            href="#"
-            class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
-            >Giới thiệu</a
-          >
-          <a
-            href="#"
-            class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16.5px] font-bold"
-            >Liên hệ</a
-          >
+        <div class="mt-auto flex justify-between hidden w-[850px] md:flex">
+          <ul class="flex space-x-4 gap-7">
+            <li class="relative group w-28">
+              <a
+                href="#"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
+                >Cuộc đấu giá</a
+              >
+              <ul
+                class="bg-gray-50 shadow-xl absolute -left-2 w-[180px] hidden group-hover:block border border-gray-100"
+              >
+                <li class="">
+                  <a
+                    href="dangdaugia"
+                    class="block px-4 py-3 text-gray-900 hover:border-b-[2px] hover:border-red-600"
+                    >Tài sản đang đấu giá</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-900 hover:border-b-[2px] hover:border-red-600"
+                    >Tài sản chưa giá</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="relative group w-30">
+              <a
+                href="#"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
+                >Tài Sản Đấu Giá</a
+              >
+              <ul
+                class="bg-gray-50 shadow-xl absolute left-0 w-[170px] hidden group-hover:block border border-gray-100"
+              >
+                <li class="">
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-gray-900 hover:border-b-[2px] hover:border-red-600"
+                    >Tài sản nhà nước</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-900 hover:border-b-[2px] hover:border-red-600"
+                    >Tài sản tư nhân</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-900 hover:border-b-[2px] hover:border-red-600"
+                    >Bất Động Sản
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
+                >Tin tức</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16 .5px] font-bold"
+                >Giới thiệu</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-[16.5px] font-bold"
+                >Liên hệ</a
+              >
+            </li>
+          </ul>
         </div>
+
         <div
           class="mt-2 lg:flex items-center gap-5 ml-28 hidden md:block lg:block"
         >
@@ -51,11 +105,13 @@
             class="w-20 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
           />
           <div class="">
-            <button
-              class="bg-red-600 text-white px-10 py-1 rounded-md text-sm font-medium"
-            >
-              Đăng Nhập
-            </button>
+            <a href="admin/dashbord">
+              <button
+                class="bg-red-600 text-white px-10 py-1 rounded-md text-sm font-medium"
+              >
+                Đăng Nhập
+              </button>
+            </a>
           </div>
         </div>
       </div>

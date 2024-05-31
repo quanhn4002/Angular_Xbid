@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Listings</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+      <!-- Filters and Sidebar -->
+      <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-1/4 p-2">
+          <!-- Filter Section -->
+          <div class="bg-white p-4 rounded shadow mb-4">
+            <h2 class="text-lg font-bold mb-2">Lọc</h2>
+            <form>
+              <label class="block mb-2">
+                <span class="text-gray-700">Từ ngày</span>
+                <input type="date" class="mt-1 block w-full" />
+              </label>
+              <label class="block mb-2">
+                <span class="text-gray-700">Đến ngày</span>
+                <input type="date" class="mt-1 block w-full" />
+              </label>
+              <button class="bg-blue-500 text-white py-2 px-4 rounded mt-2">
+                Lọc
+              </button>
+            </form>
+          </div>
+
+          <!-- Category Section -->
+          <div class="bg-white p-4 rounded shadow mb-4">
+            <h2 class="text-lg font-bold mb-2">Danh mục tài sản</h2>
+            <ul>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Tài sản</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Tài sản nhà nước</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Phương tiện vận tải</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Sưu tầm - Nghệ thuật</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Hàng hóa - vật tư</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Tài sản khác</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- New Assets Section -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Tài sản mới</h2>
+            <ul>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500"
+                  >Cập nhật thông báo không đấu giá...</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Lô tài sản máy làm đá...</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-blue-500">Lô tài sản ô tô tải...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Auction Listings -->
+        <div class="w-full md:w-3/4 p-2">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Auction Item -->
+            <div class="bg-white p-4 rounded shadow">
+              <div class="flex items-center">
+                <img
+                  src="path/to/image.jpg"
+                  alt="Auction Image"
+                  class="w-16 h-16 rounded mr-4"
+                />
+                <div>
+                  <h3 class="text-xl font-bold">
+                    Lô 7: Cũ tam thất và hoa tam thất khô của Cục Quản lý thị
+                    trường tỉnh Hà Giang
+                  </h3>
+                  <p class="text-gray-700">Giá khởi điểm: 16,825,000 VND</p>
+                  <p class="text-gray-500">Trạng thái: Chưa đấu giá</p>
+                  <p class="text-gray-500">31/05/2024 10:30:00</p>
+                  <button class="bg-red-500 text-white py-1 px-3 rounded mt-2">
+                    Chi tiết
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat Auction Item for each listing -->
+            <!-- Additional auction items can be added here similarly -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

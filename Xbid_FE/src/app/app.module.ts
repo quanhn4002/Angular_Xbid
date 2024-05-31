@@ -15,8 +15,27 @@ import { ListchuanbidaugiaComponent } from './components/listchuanbidaugia/listc
 import { FooterComponent } from './components/footer/footer.component';
 import { ChitietComponent } from './components/chitiet/chitiet.component';
 
+import { AdminComponent } from './layout/admin/admin.component';
+import { DashbordAdminComponent } from './components/dashbord-admin/dashbord-admin.component';
+import { PageDangdaugiaComponent } from './components/page-dangdaugia/page-dangdaugia.component';
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, BannerComponent, ClientComponent, HomeComponent, ProductOneComponent, ListdangdaugiaComponent, ListchuanbidaugiaComponent, FooterComponent, ChitietComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    BannerComponent,
+    ClientComponent,
+    HomeComponent,
+    ProductOneComponent,
+    ListdangdaugiaComponent,
+    ListchuanbidaugiaComponent,
+    FooterComponent,
+    ChitietComponent,
+
+    AdminComponent,
+    DashbordAdminComponent,
+    PageDangdaugiaComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
