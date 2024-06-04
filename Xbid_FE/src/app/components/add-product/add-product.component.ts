@@ -1,3 +1,4 @@
+import { ProductsService } from './../../products.service';
 import { UploadService } from './../../upload.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -9,7 +10,10 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrl: './add-product.component.css',
 })
 export class AddProductComponent {
-  constructor(private uploadService: UploadService) {}
+  constructor(
+    private uploadService: UploadService,
+    private ProductsService: ProductsService
+  ) {}
   productform = new FormGroup({
     name: new FormControl('', Validators.required),
     shortdescription: new FormControl('', Validators.required),
@@ -72,6 +76,39 @@ export class AddProductComponent {
         this.productform.controls.thumbnail.setValue(
           this.uploadService.API_URL + data?.url
         );
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+  // upload nhiều ảnh vào image gallery
+  images: string[] = [];
+  onUploadGallery = (e: any) => {
+    const dataform = new FormData();
+    for (let i = 0; i < e.target.files.length; i++) {
+      dataform.append('files', e.target.files[i]);
+    }
+    this.uploadService.uploadImages(dataform).subscribe(
+      (data: any) => {
+        console.log(data);
+        const images = data.map((item: any) => {
+          return this.uploadService.API_URL + item.url;
+        });
+        this.images = images; // Gán gallery bằng mảng images
+        this.productform.controls.images.setValue(images);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+
+  onAdd = () => {
+    console.log(this.productform.value);
+    this.ProductsService.addProduct(this.productform.value).subscribe(
+      (data) => {
+        console.log(data);
       },
       (error) => {
         console.log(error);

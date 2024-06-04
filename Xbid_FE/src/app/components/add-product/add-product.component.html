@@ -115,6 +115,7 @@
   <!-- san pham -->
   <form
     [formGroup]="productform"
+    (ngSubmit)="(onAdd)"
     class="flex flex-col gap-4 max-w-full mx-auto mt-10 px-4 py-6 bg-white rounded-3xl shadow-2xl"
   >
     <input
@@ -142,6 +143,23 @@
         alt="Product Thumbnail"
       />
     </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-medium text-gray-700">Images</label>
+      <input
+        class="border rounded-s p-2"
+        type="file"
+        (change)="onUploadGallery($event)"
+        multiple
+      />
+      <div class="flex flex-row gap-2">
+        <img
+          class="w-[90px] h-auto"
+          *ngFor="let img of images"
+          [src]="img"
+          alt="Product Gallery"
+        />
+      </div>
+    </div>
 
     <div class="flex flex-col gap-2">
       <label class="font-medium text-gray-700">Mô tả ngắn</label>
@@ -162,5 +180,45 @@
         class="border rounded-s"
       ></angular-editor>
     </div>
+    <!-- start_price -->
+    <input
+      class="border rounded-s p-2"
+      type="number"
+      placeholder="Giá khởi điểm"
+      formControlName="start_price"
+    />
+    <!-- start_time -->
+    <div>
+      <label for="" class="flex col">Thời Gian bắt đầu</label>
+      <input
+        class="border rounded-s p-2"
+        type="datetime-local"
+        placeholder="Thời gian bắt đầu"
+        formControlName="start_time"
+      />
+    </div>
+
+    <!--end_time -->
+    <div>
+      <label for="" class="flex col">Thời gian kết thúc</label>
+      <input
+        class="border rounded-s p-2"
+        type="datetime-local"
+        placeholder="Thời gian kết thúc"
+        formControlName="end_time"
+      />
+    </div>
+    <div>
+      <!-- step -->
+      <input
+        class="border rounded-s p-2"
+        type="number"
+        placeholder="Bước giá"
+        formControlName="step"
+      />
+    </div>
+    <button class="bg-indigo-500 text-white p-2 rounded-s" type="submit">
+      Thêm sản phẩm
+    </button>
   </form>
 </div>
