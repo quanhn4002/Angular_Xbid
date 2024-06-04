@@ -1,111 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auction Listings</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-gray-100">
-    <div class="container mx-auto p-4">
-      <!-- Filters and Sidebar -->
-      <div class="flex flex-col md:flex-row">
-        <div class="w-full md:w-1/4 p-2">
-          <!-- Filter Section -->
-          <div class="bg-white p-4 rounded shadow mb-4">
-            <h2 class="text-lg font-bold mb-2">Lọc</h2>
-            <form>
+<body class="bg-gray-100">
+  <div class="max-w-[90%] mx-auto p-4">
+    <!-- Filters and Sidebar -->
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:w-1/4 p-2">
+        <!-- Filter Section -->
+        <div class="bg-white p-4 rounded shadow mb-4">
+          <h2 class="text-lg font-bold mb-2">Tìm Kiếm</h2>
+          <div>
+            <div>
               <label class="block mb-2">
-                <span class="text-gray-700">Từ ngày</span>
-                <input type="date" class="mt-1 block w-full" />
+                <input
+                  type="text"
+                  class="mt-1 block w-full h-[50px] border border-gray-200 rounded px-4"
+                  placeholder="Nhập từ khóa ..."
+                />
               </label>
-              <label class="block mb-2">
-                <span class="text-gray-700">Đến ngày</span>
+            </div>
+            <div class="flex gap-4">
+              <div class="block mb-2 max-w-[120px] h-14 gird grid-cols-1">
+                <span class="text-gray-800 font-semibold">Từ ngày</span>
                 <input type="date" class="mt-1 block w-full" />
-              </label>
-              <button class="bg-blue-500 text-white py-2 px-4 rounded mt-2">
-                Lọc
-              </button>
-            </form>
-          </div>
-
-          <!-- Category Section -->
-          <div class="bg-white p-4 rounded shadow mb-4">
-            <h2 class="text-lg font-bold mb-2">Danh mục tài sản</h2>
-            <ul>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Tài sản</a>
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Tài sản nhà nước</a>
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Phương tiện vận tải</a>
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Sưu tầm - Nghệ thuật</a>
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Hàng hóa - vật tư</a>
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Tài sản khác</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- New Assets Section -->
-          <div class="bg-white p-4 rounded shadow">
-            <h2 class="text-lg font-bold mb-2">Tài sản mới</h2>
-            <ul>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500"
-                  >Cập nhật thông báo không đấu giá...</a
-                >
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Lô tài sản máy làm đá...</a>
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-blue-500">Lô tài sản ô tô tải...</a>
-              </li>
-            </ul>
+              </div>
+              <div class="block mb-2">
+                <span class="text-gray-800 font-semibold">Đến ngày</span>
+                <input type="date" class="mt-1 block w-full" />
+              </div>
+            </div>
+            <button class="bg-red-800 text-white py-2 px-6 rounded mt-2">
+              Lọc
+            </button>
           </div>
         </div>
 
-        <!-- Auction Listings -->
-        <div class="w-full md:w-3/4 p-2">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <!-- Auction Item -->
-            <div class="bg-white p-4 rounded shadow">
-              <div class="flex items-center">
+        <!-- New Assets Section -->
+        <div class="bg-white p-4 rounded shadow max-w-sm mx-auto">
+          <h2 class="text-xl font-bold mb-2">Trạng thái tài sản</h2>
+          <ul class="">
+            <li class="mb-2">
+              <input type="checkbox" id="tatca" class="mr-2" />
+              <label for="tatca" class="">Tất cả</label>
+            </li>
+            <li class="mb-2">
+              <input type="checkbox" id="sapdienra" class="mr-2" checked />
+              <label for="sapdienra">Sắp diễn ra</label>
+            </li>
+            <li class="mb-2">
+              <input type="checkbox" id="dangdienra" class="mr-2" />
+              <label for="dangdienra">Đang diễn ra</label>
+            </li>
+            <li class="mb-2">
+              <input type="checkbox" id="daketthuc" class="mr-2" />
+              <label for="daketthuc">Đã kết thúc</label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Category Section -->
+        <div class="bg-white p-4 rounded shadow mt-7">
+          <h2 class="text-xl font-bold mb-2">Danh mục tài sản</h2>
+          <ul class="mx-auto">
+            <li class="mb-2">
+              <a href="#" class="text-black">Tất Cả</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-black">Tài sản</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-black">Tài sản nhà nước</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-black">Phương tiện vận tải</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-black">Sưu tầm - Nghệ thuật</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-black">Hàng hóa - vật tư</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-black">Tài sản khác</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Auction Listings -->
+      <div class="max-w-[78%] mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            class="w-[300px] h-[500px] bg-gray-100 shadow-xl rounded-tr-3xl rounded-bl-3xl item mt-10"
+          >
+            <div class="">
+              <span class="flex justify-center">Thời gian đấu giá</span>
+              <div class="flex justify-center" style="font-weight: 700">
+                <span>31/05/2024 10:30:00</span>
+              </div>
+            </div>
+            <div class="mt-1">
+              <a href="">
                 <img
-                  src="path/to/image.jpg"
-                  alt="Auction Image"
-                  class="w-16 h-16 rounded mr-4"
+                  alt="image"
+                  src="https://data.lvo.vn/media/upload/1001406/IMAGE/2022/3D_illustration_image_of_a_gavel_-_auction_hammer_-_free_to_use_in_your_projects_01.jpg"
+                  class="w-[280px] h-[200px] object-cover mx-auto rounded-tr-3xl rounded-bl-3xl"
                 />
-                <div>
-                  <h3 class="text-xl font-bold">
-                    Lô 7: Cũ tam thất và hoa tam thất khô của Cục Quản lý thị
-                    trường tỉnh Hà Giang
-                  </h3>
-                  <p class="text-gray-700">Giá khởi điểm: 16,825,000 VND</p>
-                  <p class="text-gray-500">Trạng thái: Chưa đấu giá</p>
-                  <p class="text-gray-500">31/05/2024 10:30:00</p>
-                  <button class="bg-red-500 text-white py-1 px-3 rounded mt-2">
-                    Chi tiết
-                  </button>
+              </a>
+              <div class="absolute">
+                <div class="">
+                  <img
+                    alt="image"
+                    src="https://data.lvo.vn/media/upload/1001768/Logo/LOGO-LVAuction.png"
+                    class="w-[30px] relative -top-48 left-8"
+                  />
                 </div>
               </div>
             </div>
-            <!-- Repeat Auction Item for each listing -->
-            <!-- Additional auction items can be added here similarly -->
+            <div class="max-w-[290px] mx-auto mt-5">
+              <h4>
+                <a class="font-semibold" href=""
+                  >Lô 2: Lô 80 sản phẩm quần áo của Cục Quản lý thị trường tỉnh
+                  Hà Giang</a
+                >
+              </h4>
+              <p class="mt-5">Giá khởi điểm : <span>5.040.000 </span>VND</p>
+              <p class="mt-5">Trạng Thái : <span>Đang Đấu Giá </span></p>
+              <div class="bg-red-800 mt-5 max-w-[100px] h-10 text-center">
+                <a
+                  href="chitiet"
+                  class="text-white font-bold text-sm leading-6 h-10 flex justify-center items-center"
+                >
+                  Chi tiết
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div
+            class="w-[300px] h-[500px] bg-gray-100 shadow-xl rounded-tr-3xl rounded-bl-3xl item mt-10"
+          >
+            <div class="">
+              <span class="flex justify-center">Thời gian đấu giá</span>
+              <div class="flex justify-center" style="font-weight: 700">
+                <span>31/05/2024 10:30:00</span>
+              </div>
+            </div>
+            <div class="mt-1">
+              <a href="">
+                <img
+                  alt="image"
+                  src="https://data.lvo.vn/media/upload/1001406/IMAGE/2022/3D_illustration_image_of_a_gavel_-_auction_hammer_-_free_to_use_in_your_projects_01.jpg"
+                  class="w-[280px] h-[200px] object-cover mx-auto rounded-tr-3xl rounded-bl-3xl"
+                />
+              </a>
+              <div class="absolute">
+                <div class="">
+                  <img
+                    alt="image"
+                    src="https://data.lvo.vn/media/upload/1001768/Logo/LOGO-LVAuction.png"
+                    class="w-[30px] relative -top-48 left-8"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="max-w-[290px] mx-auto mt-5">
+              <h4>
+                <a class="font-semibold" href=""
+                  >Lô 2: Lô 80 sản phẩm quần áo của Cục Quản lý thị trường tỉnh
+                  Hà Giang</a
+                >
+              </h4>
+              <p class="mt-5">Giá khởi điểm : <span>5.040.000 </span>VND</p>
+              <p class="mt-5">Trạng Thái : <span>Đang Đấu Giá </span></p>
+              <div class="bg-red-800 mt-5 max-w-[100px] h-10 text-center">
+                <a
+                  href="chitiet"
+                  class="text-white font-bold text-sm leading-6 h-10 flex justify-center items-center"
+                >
+                  Chi tiết
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-[300px] h-[500px] bg-gray-100 shadow-xl rounded-tr-3xl rounded-bl-3xl item mt-10"
+          >
+            <div class="">
+              <span class="flex justify-center">Thời gian đấu giá</span>
+              <div class="flex justify-center" style="font-weight: 700">
+                <span>31/05/2024 10:30:00</span>
+              </div>
+            </div>
+            <div class="mt-1">
+              <a href="">
+                <img
+                  alt="image"
+                  src="https://data.lvo.vn/media/upload/1001406/IMAGE/2022/3D_illustration_image_of_a_gavel_-_auction_hammer_-_free_to_use_in_your_projects_01.jpg"
+                  class="w-[280px] h-[200px] object-cover mx-auto rounded-tr-3xl rounded-bl-3xl"
+                />
+              </a>
+              <div class="absolute">
+                <div class="">
+                  <img
+                    alt="image"
+                    src="https://data.lvo.vn/media/upload/1001768/Logo/LOGO-LVAuction.png"
+                    class="w-[30px] relative -top-48 left-8"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="max-w-[290px] mx-auto mt-5">
+              <h4>
+                <a class="font-semibold" href=""
+                  >Lô 2: Lô 80 sản phẩm quần áo của Cục Quản lý thị trường tỉnh
+                  Hà Giang</a
+                >
+              </h4>
+              <p class="mt-5">Giá khởi điểm : <span>5.040.000 </span>VND</p>
+              <p class="mt-5">Trạng Thái : <span>Đang Đấu Giá </span></p>
+              <div class="bg-red-800 mt-5 max-w-[100px] h-10 text-center">
+                <a
+                  href="chitiet"
+                  class="text-white font-bold text-sm leading-6 h-10 flex justify-center items-center"
+                >
+                  Chi tiết
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div
+            class="w-[300px] h-[500px] bg-gray-100 shadow-xl rounded-tr-3xl rounded-bl-3xl item mt-10"
+          >
+            <div class="">
+              <span class="flex justify-center">Thời gian đấu giá</span>
+              <div class="flex justify-center" style="font-weight: 700">
+                <span>31/05/2024 10:30:00</span>
+              </div>
+            </div>
+            <div class="mt-1">
+              <a href="">
+                <img
+                  alt="image"
+                  src="https://data.lvo.vn/media/upload/1001406/IMAGE/2022/3D_illustration_image_of_a_gavel_-_auction_hammer_-_free_to_use_in_your_projects_01.jpg"
+                  class="w-[280px] h-[200px] object-cover mx-auto rounded-tr-3xl rounded-bl-3xl"
+                />
+              </a>
+              <div class="absolute">
+                <div class="">
+                  <img
+                    alt="image"
+                    src="https://data.lvo.vn/media/upload/1001768/Logo/LOGO-LVAuction.png"
+                    class="w-[30px] relative -top-48 left-8"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="max-w-[290px] mx-auto mt-5">
+              <h4>
+                <a class="font-semibold" href=""
+                  >Lô 2: Lô 80 sản phẩm quần áo của Cục Quản lý thị trường tỉnh
+                  Hà Giang</a
+                >
+              </h4>
+              <p class="mt-5">Giá khởi điểm : <span>5.040.000 </span> VNĐ</p>
+              <p class="mt-5">Trạng Thái : <span>Đang Đấu Giá </span></p>
+              <div class="bg-red-800 mt-5 max-w-[100px] h-10 text-center">
+                <a
+                  href="chitiet"
+                  class="text-white font-bold text-sm leading-6 h-10 flex justify-center items-center"
+                >
+                  Chi tiết
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-[300px] h-[500px] bg-gray-100 shadow-xl rounded-tr-3xl rounded-bl-3xl item mt-10"
+          >
+            <div class="">
+              <span class="flex justify-center">Thời gian đấu giá</span>
+              <div class="flex justify-center" style="font-weight: 700">
+                <span>31/05/2024 10:30:00</span>
+              </div>
+            </div>
+            <div class="mt-1">
+              <a href="">
+                <img
+                  alt="image"
+                  src="https://data.lvo.vn/media/upload/1001406/IMAGE/2022/3D_illustration_image_of_a_gavel_-_auction_hammer_-_free_to_use_in_your_projects_01.jpg"
+                  class="w-[280px] h-[200px] object-cover mx-auto rounded-tr-3xl rounded-bl-3xl"
+                />
+              </a>
+              <div class="absolute">
+                <div class="">
+                  <img
+                    alt="image"
+                    src="https://data.lvo.vn/media/upload/1001768/Logo/LOGO-LVAuction.png"
+                    class="w-[30px] relative -top-48 left-8"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="max-w-[290px] mx-auto mt-5">
+              <h4>
+                <a class="font-semibold" href=""
+                  >Lô 2: Lô 80 sản phẩm quần áo của Cục Quản lý thị trường tỉnh
+                  Hà Giang</a
+                >
+              </h4>
+              <p class="mt-5">Giá khởi điểm : <span>5.040.000 </span></p>
+              <p class="mt-5">Trạng Thái : <span>Đang Đấu Giá </span></p>
+              <div class="bg-red-800 mt-5 max-w-[100px] h-10 text-center">
+                <a
+                  href="chitiet"
+                  class="text-white font-bold text-sm leading-6 h-10 flex justify-center items-center"
+                >
+                  Chi tiết
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</body>
