@@ -2,10 +2,13 @@ import express from "express";
 import productRouter from "./router/product.js";
 import userRouter from "./router/user.router.js";
 import mongoose from "mongoose";
+import uploadRouter from "./router/upload.js";
 const app = express();
+
 app.use(express.json());
 app.use("", productRouter);
 app.use("", userRouter);
+app.use("/files", uploadRouter);
 const port = 8000;
 const connectdb = async () => {
   try {
