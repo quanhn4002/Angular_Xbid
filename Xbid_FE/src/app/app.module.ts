@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ClientComponent } from './layout/client/client.component';
@@ -18,6 +18,9 @@ import { ChitietComponent } from './components/chitiet/chitiet.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { DashbordAdminComponent } from './components/dashbord-admin/dashbord-admin.component';
 import { PageDangdaugiaComponent } from './components/page-dangdaugia/page-dangdaugia.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -35,8 +38,16 @@ import { PageDangdaugiaComponent } from './components/page-dangdaugia/page-dangd
     AdminComponent,
     DashbordAdminComponent,
     PageDangdaugiaComponent,
+    AddProductComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularEditorModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -24,7 +24,7 @@
       </li>
       <li>
         <a
-          href="admin/productAdd"
+          href="#"
           class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
         >
           <span
@@ -113,66 +113,54 @@
     </ul>
   </div>
   <!-- san pham -->
-  <div class="w-[83%] mt-20 mx-auto">
-    <table
-      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border"
-    >
-      <thead
-        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
-      >
-        <tr class="border">
-          <th scope="col" class="px-6 py-3">Product name</th>
-          <th scope="col" class="px-6 py-3">Color</th>
-          <th scope="col" class="px-6 py-3">Category</th>
-          <th scope="col" class="px-6 py-3">Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-          >
-            Apple MacBook Pro 17"
-          </th>
-          <td class="px-6 py-4">Silver</td>
-          <td class="px-6 py-4">Laptop</td>
-          <td class="px-6 py-4">$2999</td>
-        </tr>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-          >
-            Microsoft Surface Pro
-          </th>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">Laptop PC</td>
-          <td class="px-6 py-4">$1999</td>
-        </tr>
-        <tr class="bg-white dark:bg-gray-800">
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-          >
-            Magic Mouse 2
-          </th>
-          <td class="px-6 py-4">Black</td>
-          <td class="px-6 py-4">Accessories</td>
-          <td class="px-6 py-4">$99</td>
-        </tr>
-        <tr class="bg-white dark:bg-gray-800">
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-          >
-            Magic Mouse 2
-          </th>
-          <td class="px-6 py-4">Black</td>
-          <td class="px-6 py-4">Accessories</td>
-          <td class="px-6 py-4">$99</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <form
+    [formGroup]="productform"
+    class="flex flex-col gap-4 max-w-full mx-auto mt-10 px-4 py-6 bg-white rounded-3xl shadow-2xl"
+  >
+    <input
+      class="border rounded-s p-2"
+      type="text"
+      placeholder="Tên sản phẩm"
+      formControlName="name"
+    />
+
+    <select class="border rounded-s p-2" formControlName="category">
+      <option value="">DM1</option>
+    </select>
+
+    <div class="flex flex-col gap-2">
+      <label class="font-medium text-gray-700">Ảnh sản phẩm</label>
+      <input
+        class="border rounded-s p-2"
+        type="file"
+        (change)="onUpload($event)"
+      />
+      <img
+        class="w-[90px] h-auto mt-2"
+        *ngIf="thumbnail !== ''"
+        src="{{ thumbnail }}"
+        alt="Product Thumbnail"
+      />
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label class="font-medium text-gray-700">Mô tả ngắn</label>
+      <angular-editor
+        id="editor1"
+        formControlName="shortdescription"
+        [config]="editorConfig"
+        class="border rounded-s"
+      ></angular-editor>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label class="font-medium text-gray-700">Mô tả sản phẩm</label>
+      <angular-editor
+        id="editor2"
+        formControlName="description"
+        [config]="editorConfig"
+        class="border rounded-s"
+      ></angular-editor>
+    </div>
+  </form>
 </div>

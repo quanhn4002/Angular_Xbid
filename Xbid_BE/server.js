@@ -3,8 +3,10 @@ import productRouter from "./router/product.js";
 import userRouter from "./router/user.router.js";
 import mongoose from "mongoose";
 import uploadRouter from "./router/upload.js";
+import cors from "cors";
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("", productRouter);
 app.use("", userRouter);
