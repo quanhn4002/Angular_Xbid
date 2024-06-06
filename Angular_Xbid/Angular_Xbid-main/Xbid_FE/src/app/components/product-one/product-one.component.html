@@ -1,0 +1,54 @@
+<div class="ml-14">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div
+      class="w-[300px] h-[530px] bg-gray-100 shadow-xl rounded-tr-3xl rounded-bl-3xl item mt-10"
+      *ngFor="let item of products"
+    >
+      <div class="">
+        <span class="flex justify-center">Thời gian đấu giá</span>
+        <div class="flex justify-center" style="font-weight: 700">
+          <span>31/05/2024 10:30:00</span>
+        </div>
+      </div>
+      <div class="mt-1">
+        <a href="">
+          <img
+            [src]="item.thumbnail"
+            class="w-[280px] h-[200px] object-cover mx-auto rounded-tr-3xl rounded-bl-3xl"
+          />
+        </a>
+        <div class="absolute">
+          <div class="">
+            <img
+              alt="image"
+              src="https://data.lvo.vn/media/upload/1001768/Logo/LOGO-LVAuction.png"
+              class="w-[30px] relative -top-48 left-8"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="max-w-[270px] mx-auto mt-5">
+        <h4>
+          <a class="font-semibold" href="">{{ item.name }}</a>
+        </h4>
+        <p class="mt-5">
+          Giá khởi điểm :
+          <span class="text-red-500">{{ item.start_price }} </span> VNĐ
+        </p>
+        <p class="mt-5">Trạng Thái : <span>Chưa Đấu Giá </span></p>
+        <div class="bg-red-800 mt-5 max-w-[100px] h-10 text-center">
+          <a
+            href="/chitiet/{{ item._id }}"
+            class="text-white font-bold text-sm leading-6 h-10 flex justify-center items-center"
+          >
+            Chi tiết
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+
+    <!--  -->
+  </div>
+</div>
