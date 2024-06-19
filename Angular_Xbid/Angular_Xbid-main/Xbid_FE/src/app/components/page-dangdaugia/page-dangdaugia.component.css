@@ -1,9 +1,0 @@
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: red;
-}
-input[type="checkbox"]:checked {
-  background-color: red;
-  border-color: red;
-}
